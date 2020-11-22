@@ -7,12 +7,14 @@ import B from "./components/B";
 import C from "./components/C";
 
 function App({ test }) {
-  console.log(test);
   return (
     <div className='App'>
-      <A />
-      <B />
-      <C />
+      <h1>App</h1>
+      <div className='app-container'>
+        <A />
+        <B />
+        <C />
+      </div>
     </div>
   );
 }

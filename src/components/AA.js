@@ -6,11 +6,13 @@ import AAC from "./AAC";
 
 export default function AA() {
   return (
-    <div>
-      <div>Component AA</div>
-      <AAA />
-      <AAB />
-      <AAC />
+    <div className='AA'>
+      <h3>AA</h3>
+      <div className='aa-container'>
+        <AAA />
+        <AAB />
+        <AAC />
+      </div>
     </div>
   );
 }

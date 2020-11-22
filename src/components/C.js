@@ -5,10 +5,12 @@ import CB from "./CB";
 
 export default function C() {
   return (
-    <div>
-      <div>Component C</div>
-      <CA />
-      <CB />
+    <div className='C'>
+      <h3>C</h3>
+      <div className='c-container'>
+        <CA />
+        <CB />
+      </div>
     </div>
   );
 }

@@ -1,9 +1,21 @@
 import React from "react";
+import { connect } from "react-redux";
 
-export default function CA() {
+function CA({ weather }) {
   return (
-    <div>
-      <div>Component CA</div>
+    <div className='CA'>
+      <h6>CA</h6>
+      <div>
+        {weather.date}'s weather is {weather.status}
+      </div>
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    weather: state.weather,
+  };
+};
+
+export default connect(mapStateToProps)(CA);

@@ -1,9 +1,21 @@
 import React from "react";
+import { connect } from "react-redux";
 
-export default function CB() {
+function CB({ todo }) {
   return (
-    <div>
-      <div>Component CB</div>
+    <div className='CB'>
+      <h6>CB</h6>
+      {todo.map((item) => (
+        <div key={item.id}>{item.text}</div>
+      ))}
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    todo: state.todo,
+  };
+};
+
+export default connect(mapStateToProps)(CB);

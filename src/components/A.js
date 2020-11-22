@@ -2,12 +2,15 @@ import React from "react";
 
 import AA from "./AA";
 import AB from "./AB";
+
 export default function A() {
   return (
-    <div>
-      <div>Component A</div>
-      <AA />
-      <AB />
+    <div className='A'>
+      <h3>A</h3>
+      <div className='a-container'>
+        <AA />
+        <AB />
+      </div>
     </div>
   );
 }
