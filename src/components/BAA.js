@@ -7,34 +7,31 @@ class BAA extends Component {
     this.state = {
       text: "",
     };
-    this.inputHandler = this.inputHandler.bind(this);
     this.enterHandler = this.enterHandler.bind(this);
   }
 
-  inputHandler(e) {
-    this.setState({ text: e.target.value });
-  }
-
   enterHandler(e) {
-    const key = e.keyCode;
-    if (key !== 13) {
-      return;
-    }
-    this.props.changeWeather(this.state.text);
-    this.setState({ text: "" });
+    console.log(e.target.value)
+    this.props.changeTheme(e.target.value);
   }
 
   render() {
     return (
       <div className='BAA'>
         <h6>BAA</h6>
-        <span>change weather</span>
-        <input
-          type='text'
-          value={this.state.text}
-          onChange={this.inputHandler}
-          onKeyDown={this.enterHandler}
-        />
+        <span>change theme</span>
+        <div>
+          <label>
+            <input type="radio" name="theme" value="light" onChange={this.enterHandler}></input>
+          light
+        </label>
+        </div>
+        <div>
+          <label>
+            <input type="radio" name="theme" value="dark" onChange={this.enterHandler}></input>
+          dark
+        </label>
+        </div>
       </div>
     );
   }
@@ -42,7 +39,7 @@ class BAA extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeWeather: (weather) => dispatch({ type: "CHANGE_WEATHER", payload: weather }),
+    changeTheme: (theme) => dispatch({ type: "CHANGE_THEME", payload: theme }),
   };
 };
 
