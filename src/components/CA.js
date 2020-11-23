@@ -1,12 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 
-function CA({ weather }) {
+function CA({ theme }) {
   return (
     <div className='CA'>
       <h6>CA</h6>
       <div>
-        {weather.date}'s weather is {weather.status}
+        app theme is {theme.status}
       </div>
     </div>
   );
@@ -14,7 +14,7 @@ function CA({ weather }) {
 
 const mapStateToProps = (state) => {
   return {
-    weather: state.weather,
+    theme: state.theme,
   };
 };
 
